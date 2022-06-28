@@ -2,10 +2,10 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const authRouter = require("./routers/auth.router");
 const bookRouter = require("./routers/book.router");
-
+require("dotenv").config()
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3333
 
 app.use(bodyParser.json());
 
