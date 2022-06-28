@@ -6,7 +6,7 @@ const { faker } = require("@faker-js/faker");
 
 const bookRouter = express.Router();
 // get all books
-bookRouter.get("/", verifyToken, Books.getAllBooks);
+bookRouter.get("/", Books.getAllBooks);
 
 //get one book
 
