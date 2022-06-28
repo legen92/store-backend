@@ -7,15 +7,21 @@ const {
   dialect,
 } = require("../config/db.config");
 
-const sequelize = new Sequelize(database, user, password, {
+
+const sequelize = new Sequelize({
+  database: database,
+  username: user,
+  password,
   host: host,
+  port: 5432,
   dialect: dialect,
-  pool: {
-    max: 5,
-    min: 0,
-    acquire: 30000,
-    idle: 10000,
+  dialectOptions: {
+    ssl: {
+      require: true, // This will help you. But you will see nwe error
+      rejectUnauthorized: false // This line will fix new error
+    }, 
   },
+  logging: false
 });
 
 const db = {};
