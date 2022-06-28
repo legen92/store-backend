@@ -2,7 +2,7 @@ const db = require("../models");
 
 const Product = {
   getAllProducts: async (req, res) => {
-    const ProductsAll = await db.Product.findAll();
+    const ProductsAll = await db.Products.findAll();
     res.status(200).json({ message: "get all Product success", ProductsAll });
   },
   getOneProduct: async (req, res) => {
