@@ -29,9 +29,9 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.User = require('./users.model')(sequelize,DataTypes)
-db.Book = require('./books.model')(sequelize,DataTypes)
+db.Users = require('./users.model')(sequelize,DataTypes)
+db.Products = require('./products.model')(sequelize,DataTypes)
 
-db.User.sync()
-db.Book.sync()
+db.Users.sync({force:true})
+db.Products.sync({force:true})
 module.exports = db;

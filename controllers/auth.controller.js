@@ -6,6 +6,7 @@ const SECRET = require("../config/auth.config");
 const Auth = {
   register: async (req, res) => {
     const { username, password } = req.body;
+    console.log(req.body)
     const newUser = {
       username,
       password: md5(password),
@@ -17,6 +18,7 @@ const Auth = {
         newUser,
       });
     } catch (error) {
+      console.log(error)
       res.status(500).json({ message: "server error" });
     }
   },

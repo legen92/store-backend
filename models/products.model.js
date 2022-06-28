@@ -1,5 +1,5 @@
 module.exports = (sequelize,DataTypes) => {
-    const Book = sequelize.define("Book", {
+    const Products = sequelize.define("Book", {
       title: {
         type: DataTypes.STRING,
         allowNull: false
@@ -9,10 +9,14 @@ module.exports = (sequelize,DataTypes) => {
         allowNull: false
       },
       price:{
+        type: DataTypes.INTEGER,
+        allowNull: false
+      },
+      category:{
         type: DataTypes.STRING,
         allowNull: false
       }
     });
-    return Book;
+    return Products;
   };
   
