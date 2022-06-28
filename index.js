@@ -7,7 +7,7 @@ require("dotenv").config()
 
 const app = express();
 const port = process.env.PORT || 3333
-app.use(cors({origin: ['https://store-backed.herokuapp.com']}))
+app.use(cors())
 app.use(bodyParser.json());
 
 app.use("/auth", authRouter);
