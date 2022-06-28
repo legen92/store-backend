@@ -11,7 +11,7 @@ app.use(cors({origin: ['https://store-backed.herokuapp.com']}))
 app.use(bodyParser.json());
 
 app.use("/auth", authRouter);
-app.use("/book", productRouter);
+app.use("/products", productRouter);
 app.get("/", (req, res) => {
   return res.json({message: "Hello world !!!"})
 })
