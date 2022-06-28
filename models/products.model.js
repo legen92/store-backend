@@ -1,10 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
   const Products = sequelize.define("Product", {
-    id: {
-      type: DataTypes.INTEGER,
-      autoIncrement: true,
-      primaryKey: true,
-    },
+   
     title: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -19,7 +15,6 @@ module.exports = (sequelize, DataTypes) => {
     },
     category: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
     description:{
       type: DataTypes.STRING,
